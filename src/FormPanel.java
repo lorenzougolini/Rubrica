@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.GridBagLayout;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
+import javax.swing.border.Border;
 
 public class FormPanel extends JPanel {
 
@@ -34,7 +35,7 @@ public class FormPanel extends JPanel {
         textIndirizzo = new JTextField(20);
         textEta = new JTextField(20);
 
-        defineLayout();
+        defineLayout("Inserisci i dati del nuovo contatto");
 
     }
 
@@ -55,16 +56,16 @@ public class FormPanel extends JPanel {
         textIndirizzo = new JTextField(persona.getIndirizzo(), 20);
         textEta = new JTextField(persona.getEta().toString(), 20);
 
-        defineLayout();
+        defineLayout("Modifica i dati del contatto");
 
     }
 
-    private void defineLayout() {
+    private void defineLayout(String borderTitle) {
         
-        // Border bordoInterno = BorderFactory.createTitledBorder("Inserisci i dati del nuovo contatto");
-        // Border bordoEsterno = BorderFactory.createEmptyBorder(0, 5, 5, 5);
-        // Border bordoFinale = BorderFactory.createCompoundBorder(bordoEsterno, bordoInterno);
-        // setBorder(bordoFinale);
+        Border bordoInterno = BorderFactory.createTitledBorder(borderTitle);
+        Border bordoEsterno = BorderFactory.createEmptyBorder(0, 5, 5, 5);
+        Border bordoFinale = BorderFactory.createCompoundBorder(bordoEsterno, bordoInterno);
+        setBorder(bordoFinale);
 
         // layout
         GridBagConstraints gc = new GridBagConstraints();

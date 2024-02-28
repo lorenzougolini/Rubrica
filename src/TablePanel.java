@@ -1,4 +1,6 @@
 import javax.swing.*;
+import javax.swing.border.Border;
+
 import java.awt.BorderLayout;
 
 import javax.swing.table.DefaultTableModel;
@@ -21,6 +23,11 @@ public class TablePanel extends JPanel{
         model.addColumn("Nome");
         model.addColumn("Cognome");
         model.addColumn("Telefono");
+        
+        Border bordoInterno = BorderFactory.createEtchedBorder();
+        Border bordoEsterno = BorderFactory.createEmptyBorder(0, 5, 5, 5);
+        Border bordoFinale = BorderFactory.createCompoundBorder(bordoEsterno, bordoInterno);
+        setBorder(bordoFinale);
     }
 
     public int getSelectedRow(){
